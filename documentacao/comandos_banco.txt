@@ -16,5 +16,8 @@ data_alta datetime comment 'Data da alta do paciente importado do Visual ASA',
 tipo_alta varchar(100) comment 'Tipo de Alta do paciente importada do Visual ASA',
 data_cadastro datetime default current_timestamp() comment 'Data de cadastro do registro')
 comment 'Tabela que vai armazenar os dados administrativos do paciente'
-
-
+data_nascimento date not null comment 'Data de nascimento do paciente importada do Visual ASA'
+tratamento varchar(100) comment 'Tratamento do paciente importado do Visual ASA'
+servico_vip varchar(3) comment 'Sim ou Não para serviço VIP do paciente importado do Visual ASA'
+refeicoes_acomp varchar(100) comment 'Refeições que o acompanhante tem direito importado do Visual ASA'
+direito_refeicoes varchar(3) comment 'Se for paciente clínico e evolua para parto, vai ter direito às refeições Sim ou Não'
