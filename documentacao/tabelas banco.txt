@@ -15,6 +15,11 @@ tamanho: 7
 descrição: código do paciente utilizado no ERP
 
 
+nome_completo
+tipo: varchar(100)
+descrição: nome completo do paciente
+
+
 data_internacao
 tipo: datetime
 descrição: data e horário de internação do paciente
@@ -37,3 +42,14 @@ descrição: data e horário que o paciente teve alta no visual asa
 tipo_alta
 tipo: varchar(100)
 descrição: tipo de alta que foi registrado para o paciente
+
+
+data_cadastro
+tipo: datetime
+descrição: data que o cadastro foi realizado no sistema de nutrição clínica,
+será utilizado uma função para preenchimento automático desse registro
+
+
+
+
+Informações clínicas

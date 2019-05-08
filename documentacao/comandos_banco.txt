@@ -1,0 +1,20 @@
+create database NUTRICAO
+DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci
+
+
+-- Criação da tabela de paciente
+
+create table if not exists paciente (
+id_paciente int primary key auto_increment not null comment 'chave primária da tabela',
+cod_intern int (9) not null comment 'Código de internação do paciente importado do Visual ASA',
+cod_pac int (8) not null comment 'Código do paciente importado do Visual ASA',
+nome_completo varchar(100) not null comment 'Nome completo do paciente importado do Visual ASA',
+data_internacao datetime not null comment 'Data da internação do paciente importada do Visual ASA',
+convenio varchar(100) not null comment 'Convênio do paciente importado do Visual ASA',
+leito varchar(100) not null comment 'Leito do paciente importado do Visual ASA',
+data_alta datetime comment 'Data da alta do paciente importado do Visual ASA',
+tipo_alta varchar(100) comment 'Tipo de Alta do paciente importada do Visual ASA',
+data_cadastro datetime default current_timestamp() comment 'Data de cadastro do registro')
+comment 'Tabela que vai armazenar os dados administrativos do paciente'
+
+
