@@ -1,0 +1,39 @@
+Paciente
+id_paciente
+tipo: int
+Descrição: código de identificação do paciente na aplicação
+
+cod_intern
+tipo: int
+tamanho: 8
+descrição: código de internação utilizado no ERP
+
+
+cod_pac
+tipo: int
+tamanho: 7
+descrição: código do paciente utilizado no ERP
+
+
+data_internacao
+tipo: datetime
+descrição: data e horário de internação do paciente
+
+
+convenio
+tipo: varchar(100)
+descrição: convênio do atendimento do paciente
+
+
+leito
+tipo: varchar(100)
+descrição: leito que o paciente está internado
+
+data_alta
+tipo: datetime
+descrição: data e horário que o paciente teve alta no visual asa
+
+
+tipo_alta
+tipo: varchar(100)
+descrição: tipo de alta que foi registrado para o paciente
