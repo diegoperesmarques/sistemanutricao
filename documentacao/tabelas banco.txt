@@ -52,4 +52,151 @@ será utilizado uma função para preenchimento automático desse registro
 
 
 
-Informações clínicas
+avaliacao_clinica
+id_avaliacao_clinica
+Tipo: int primary key auto_increment
+DescriçãoChave primária da tabela de avaliação clínica
+
+
+avaliacao_clinica_opcoes
+Tipo: varchar(50)
+Descrição: Marcação da avaliação clínica
+
+avaliacao_clinica_outro
+Tipo: varchar(100)
+Descrição : Outros avaliação clínica
+
+
+tipo_constipacao
+Tipo: varchar(50)
+Descrição: Tipo de constipação escolhida
+
+
+alergia_intelerancia
+Tipo: int(1)
+Descrição: Informa se o paciente tem ou não alergia SIM=1 e NÃO=0
+
+
+tipo_alergia
+Tipo: varchar(30)
+Descrição: Tipo de alergia do paciente
+
+
+observacao_alergia
+Tipo: varchar(100)
+Descrição: Observação da alergia do paciente
+
+
+altura
+Tipo: int(5)
+Descrição: Altura do paciente
+
+
+idade_gestacional
+Tipo: int(5)
+Descrição: Idade gestacional do paciente
+
+
+data_idade_gestacional
+Tipo: date
+Descrição: Data da idade gestacional
+
+
+feto_unico
+Tipo: int(1)
+Descrição: Informa se o feto é único SIM=1 e NÃO=0
+
+
+peso_pre_gestacional
+Tipo: decimal(4,2)
+Descrição: Peso pré gestacional do paciente
+
+
+imc_pre_gestacional
+Tipo: decimal(4,2)
+Descrição: IMC pré gestacional do paciente
+
+
+dn_pre_gestacional
+Tipo: varchar(30)
+Descrição: DN pré gestacional
+
+
+peso_atual
+Tipo: decimal(4,2)
+Descrição: Peso atual do paciente
+
+
+imc_atual
+Tipo: decimal(4,2)
+Descrição: Peso atual do paciente
+
+
+dn_atual
+Tipo: varchar(30)
+Descrição: Dn atual do paciente
+
+
+ganho_peso_total
+Tipo: decimal(4,2)
+Descrição: Ganho de peso total do paciente
+
+
+preferencia_alimentar
+Tipo: varchar(40)
+Descrição: Escolha da preferência alimentar do paciente
+
+
+verduras
+Tipo: text
+Descrição: Verduras da paciente do paciente
+
+
+legumes
+Tipo: text
+Descrição: Legumes escolhidos pelo paciente
+
+
+frutas
+Tipo: text
+Descrição: Frutas escolhidas pelo paciente
+
+
+leite_derivado
+Tipo: text
+Descrição: Leite derivado escolhido pelo paciente
+
+
+cereais
+Tipo: text
+Descrição: Cereais escolhidos pelo paciente
+
+
+leguminosas
+Tipo: text
+Descrição: Leguminosas escolhidas pelo paciente
+
+
+sopa
+Tipo: int(1)
+Descrição: Se o paciente escolheu sopa ou não SIM=1 e NÃO=0
+
+
+preferencia_jantar
+Tipo: varchar(40)
+Descrição: Escolha do jantar do paciente SOPA ou REFEIÇÃO
+
+
+tipo_cha_escolhido
+Tipo: varchar(40)
+Descrição: Tipo de chá escolhido pelo paciente
+
+
+tipo_molho_escolhido
+Tipo: varchar(40)
+Descrição: Tipo de molho escolhido pelo paciente
+
+
+tipo_suco_escolhido
+Tipo: varchar(40)
+Descrição: Tipo de suco escolhido pelo paciente
