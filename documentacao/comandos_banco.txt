@@ -62,3 +62,5 @@ character set utf8 collate utf8_general_ci;
 alter table avaliacao_clinica add column usuario_cadastro varchar(100) comment 'Usuário que realizou o cadastro da avaliação clínica';
 
 alter table avaliacao_clinica add column data_cadastro datetime default current_timestamp comment 'Data e horário do cadastro do registro';
+
+alter table avaliacao_clinica add column id_paciente int comment 'Id do paciente cadastrado na tabela paciente';
