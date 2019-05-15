@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Avaliação Clínica</title>
+        <meta charset = "UTF-8" />
+    </head>
+
+    <body>
+        <h1>Avaliação Clínica</h1>
+        <form method = "post" action = "#">
+            <fieldset>
+                <legend>Avaliação Clínica</legend>
+                <label>Avaliação Clínica</label>
+                <input type = "radio" name = "avaliacao_clinica" value = "HAS" />HAS
+                <input type = "radio" name = "avaliacao_clinica" value = "DB" />DB
+                <input type = "radio" name = "avaliacao_clinica" value = "DSLP" />DSLP
+
+                <br />
+                <label>Constipação</label>
+                <input type = "radio" name = "contipacao" value = "Diarréia" />Diarréia
+                <input type = "radio" name = "contipacao" value = "Normal" />Normal
+            </fieldset>
+
+            <fieldset>
+                <legend>Alergia/Intolerância alimentar</legend>
+                <label>Alergia/Intolerância alimentar</label>
+                <input type = "radio" name = "alergia_intolerancia" value = "1" />SIM
+                <input type = "radio" name = "alergia_intolerancia" value = "0" />NÃO
+
+                <br />
+                <input type = "radio" name = "tipo_alergia_intolerancia" value = "Glúten" />Glúten
+                <input type = "radio" name = "tipo_alergia_intolerancia" value = "Lactose" />Lactose
+                <input type = "radio" name = "tipo_alergia_intolerancia" value = "Proteína do leite" />Proteína do leite
+                <input type = "radio" name = "tipo_alergia_intolerancia" value = "Corante" />Corante
+                <input type = "radio" name = "tipo_alergia_intolerancia" value = "Ovo" />Ovo
+                <inptu type = "radio" name = "tipo_alergia_intolerancia" value = "Frutos do mar" />Frntos do Mar
+                <br />
+                <label for = "observacao_tipo_alergia">Observação</label>
+                <input type = "text" name = "observacao_tipo_alergia" id = "observacao_tipo_alergia" />
+            </fieldset>
+            <fieldset>
+                <legend>Avaliação Antropométrica</legend>
+                <label for = "altura_avaliacao">Altura</label>
+                <input type = "text" name = "altura_avaliacao" id = "altura_avaliacao" size = "5" />
+                <label>Idade Gestacional</label>
+                <input type = "text" name = "idade_gestacional" id = "idade_gestacional" size = "5" />
+                (em <input type = "date" id = "data_atual" name = "data_atual" />)
+                <label for = "feto_unico">Feto único</label>
+                <input type = "radio" name = "feto_unico" value = "1" />SIM
+                <input type = "radio" name = "feto_unico" value = "0" />NÃO
+                <br />
+                Dados Pré-gestacional:
+                <label for = "peso_pg">Peso PG</label>
+                <input type = "text" name = "peso_pg" id = "peso_pg" size = "5" />kg
+                <label for = "imc_pg">IMC PG</label>
+                <input type = "text" name = "imc_pg" id = "imc_pg" size = "5" />
+                <label for = "dn_pg">DN PG</label>
+                <input type = "radio" name = "dn_pg" value = "Baixo peso" />Baixo peso
+                <input type = "radio" name = "dn_pg" value = "Eutrofia" />Eutrofia
+                <input type = "radio" name = "dn_pg" value = "Sobrepeso" />Sobrepeso
+                <input type = "radio" name = "dn_pg" value = "Obesidade" />Obesidade
+                <br />
+                Dados Atuais:
+                <label for = "peso_atual">Peso Atual</label>
+                <input type = "text" name = "peso_atual" id = "peso_atual" size = "5" />kg
+                <label for = "imc_atual">IMC Atual</label>
+                <input type = "text" name = "imc_atual" id = "imc_atual" size = "5" />
+                <label for = "dn_atual">DN Atual</label>
+                <input type = "radio" name = "dn_atual" value = "Baixo peso" />Baixo peso
+                <input type = "radio" name = "dn_atual" value = "Eutrofia" />Eutrofia
+                <input type = "radio" name = "dn_atual" value = "Sobrepeso" />Sobrepeso
+                <input type = "radio" name = "dn_atual" value = "Obesidade" />Obesidade
+                <br />
+            </fieldset>
+            <fieldset>
+                <legend>Preferências alimentares</legend>
+                <label>Preferências</label>
+                <input type = "radio" name = "preferencias" id = "preferencias" value = "Carne bovina" />Carne bovina
+                <input type = "radio" name = "prefernecias" id = "preferencias" value = "Frango"  />Frango
+                <input type = "radio" name = "prefernecias" id = "preferencias" value = "Peixe" />Peixe
+                <input type = "radio" name = "prefernecias" id = "preferencias" value = "Ovo" />Ovo
+                <input type = "radio" name = "prefernecias" id = "preferencias" value = "Vegetariano Restrito" />Vegetariano Restrito
+                <input type = "radio" name = "prefernecias" id = "preferencias" value = "Ovo-Lacto Vegetariado" />Ovo-Lacto Vegetariano
+
+                <br />
+                <label for = "sopa">Sopa</label>
+                <input type = "radio" name = "sopa" value = "0"/>SIM
+                <input type = "radio" name = "sopa" value = "1" />NÃO
+
+                <br />
+                <label for = "preferencia_jantar">Preferência Jantar</label>
+                <input type = "radio" name = "preferencia_jantar" value = "sopa" />Sopa
+                <input type = "radio" name = "preferencia_jantar" value = "Refeição" />Refeição
+
+                <br />
+                <label for = "verduras">Verduras</label><br />
+                <textarea name = "verduras" id = "verduras" cols = "100" rows = "5"></textarea>
+                </textarea>
+
+
+                <br />
+                <label for = "legumes">Legumes</label><br />
+                <textarea name = "legumes" id = "legumes" cols = "100" rows = "5"></textarea>
+            </textarea>
+
+            <br />
+            <labe for = "frutas">Frutas</label><br />
+            <textarea name = "frutas" id = "frutas" cols = "100" rows = "5"></textarea>
+            </textarea>
+
+            <br />
+            <label for = "leite_derivados">Leite e Derivados</label><br />
+            <textarea name = "leite_derivados" id = "leite_derivados" cols = "100" rows = "5"></textarea>
+            </textarea>
+
+            <br />
+            <label for = "cereais">Cereais</label><br />
+            <textarea name = "cereais" id = "cereais" cols = "100" rows = "5"></textarea>
+           </textarea>
+
+            <br />
+            <label for = "leguminosas">Leguminosas</label><br />
+            <textarea name = "leguminosas" id = "leguminosas" cols = "100" rows = "5"></textarea>
+            </textarea>
+
+            <br />
+
+            <label for = "tipo_bebida">Tipo bebida</label>
+            <input type = "radio" name = "tipo_bebida" value = "Chá" />Chá
+            <input type = "radio" name = "tipo_bebida" value = "Água de côco" />Água de cô<code>
+            <input type = "radio" name = "tipo_bebida" value = "Iogurte" />Iogurte
+            <input type = "radio" name = "tipo_bebida" value = "Popa Desnatado" />Popa Desnatado
+
+            <label for = "molhos">Molhos</label>
+            <input type = "radio" name = "molhos" value = "Madeira" />Madeira
+            <input type = "radio" name = "molhos" value = "Ervas finas" />Ervas finas
+            <input type = "radio" name = "molhos" value = "Alecrim" />Alecrim
+            <input type = "radio" name = "molhos" value = "Laranja" />Laranja
+            <input type = "radio" name = "molhos" value = "Leite de Côco" />Leite de Cô<code>
+            
+                <br />
+            <label for = "sucos">Sucos</label>
+            <input type = "radio" name = "sucos" value = "Acerola" />Acerola
+            <input type = "radio" name = "sucos" value = "Abacaxi" />Abacaxi
+            <input type = "radio" name = "sucos" value = "Caju" />Caju
+            <input type = "radio" name = "sucos" value = "Manga" />Manga
+            <input type = "radio" name = "sucos" value = "Pêssego" />Pêssego
+            <input type = "radio" name = "sucos" value = "Uva" />Uva
+            <input type = "radio" name = "sucos" value = "Maracujá" />Maracujá
+            <input type = "radio" name = "sucos" value = "Morango" />Morango
+            <input type = "radio" name = "sucos" value = "Goiaba" />Goiaba
+            </fieldset>
+
+            <input type = "submit" value = "Cadastrar" />
+        </form>
+    </body>
+</html>
