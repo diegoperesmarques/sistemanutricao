@@ -12,16 +12,18 @@
             document.getElementById("em").value = data_completa;
             }
 
+
+
             function calcula_pre_gestacional(){
                 peso_recebido = document.getElementById("peso_pg").value;
                 peso_tratado = Number(peso_recebido.replace(",","."));
                 altura_digitado = document.getElementById("altura").value;
                 altura_tratado = Number(altura_digitado.replace(",", "."));
                 altura_quadrado = altura_tratado * altura_tratado;
-                imc = peso_recebido / altura_quadrado;
+                imc = peso_tratado / altura_quadrado;
                 imc_arredondado = imc.toFixed(2);
                document.getElementById("imc_pg").value = imc_arredondado;
-                
+
                 if(imc_arredondado < 18.9){
                     document.getElementById("tipo_obsidade_gestacional").value = "Baixo Peso";
                 } else if (imc_arredondado < 24.9){
@@ -31,6 +33,39 @@
                 } else {
                     document.getElementById("tipo_obsidade_gestacional").value = "Obesidade";
                 }
+            }
+
+
+            function calcula_atual() {
+                peso_recebido = document.getElementById("peso_atual").value;
+                peso_tratado = Number(peso_recebido.replace(",", "."));
+                altura_digitado = document.getElementById("altura").value;
+                altura_tratado = Number(altura_digitado.replace(",", "."));
+                altura_quadrado = altura_tratado * altura_tratado;
+                imc = peso_tratado / altura_quadrado;
+                imc_arredondado = imc.toFixed(2);
+               document.getElementById("imc_atual").value = imc_arredondado;
+
+               if(imc_arredondado < 18.9){
+                    document.getElementById("tipo_obesidade_atual").value = "Baixo Peso";
+                } else if (imc_arredondado < 24.9){
+                    document.getElementById("tipo_obesidade_atual").value = "Eutrófico";
+                } else if (imc_arredondado < 29.9) {
+                    document.getElementById("tipo_obesidade_atual").value = "Sobrepeso";
+                } else {
+                    document.getElementById("tipo_obesidade_atual").value = "Obesidade";
+                }
+            }
+
+            function peso_total_gestacao(){
+                peso_pg = document.getElementById("peso_pg").value;
+                peso_pg_tratado = Number(peso_pg.replace(",", "."));
+                peso_atual = document.getElementById("peso_atual").value;
+                peso_atual_tratado = Number(peso_atual.replace(",", "."));
+                ganho_peso = peso_atual_tratado - peso_pg_tratado;
+                ganho_peso_arredondado =  ganho_peso.toFixed(2);
+
+                document.getElementById("ganho_peso").value = ganho_peso_arredondado;
             }
         </script>
     </head>
@@ -147,7 +182,7 @@
                             <br />
                             Dados Atuais:
                             <label>Peso Atual</label>
-                            <input type = "text" id = "peso_atual" name = "peso_atual" size = "4" />kg &nbsp;&nbsp;
+                            <input type = "text" id = "peso_atual" name = "peso_atual" onBlur = "calcula_atual()" size = "4" />kg &nbsp;&nbsp;
 
                             <label>IMC Atual</label>
                             <input type = "tex" id = "imc_atual" name = "imc_atual" size = "4" />
@@ -156,13 +191,13 @@
                             <input type = "text" id = "tipo_obesidade_atual" name = "tipo_obesidade_atual" size = "10" />
 
                             <br />
-                            <input type = "radio" name = "gestante" />Adulto
-                            <input type = "radio" name = "gestante" />Gestante Feto Único
-                            <input type = "radio" name = "gestante" />Adolescente
-                            <input type = "radio" name = "gestante" />Idoso NSI
-                            <input type = "radio" name = "gestante" />Gestante Gemelar
+                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Adulto
+                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Gestante Feto Único
+                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Adolescente
+                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Idoso NSI
+                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Gestante Gemelar
                             <br />
-                            <label for "ganho_peso">Ganho de peso total na gestação</label>
+                            <label for = "ganho_peso">Ganho de peso total na gestação</label>
                             <input type = "text" id = "ganho_peso" name = "ganho_peso" />
                         </fieldset>
 
