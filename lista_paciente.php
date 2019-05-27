@@ -1,3 +1,7 @@
+<?php
+include("conexao.php");
+header("Content-Type: text/html; charset=utf-8");
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -35,6 +39,8 @@
             </div>
             <!-- Fim lista de paciente e informações do paciente-->
 
+
+
             <!-- Início Documentos e histórico -->
             <div class = "row">
                 <div class = "col-12">
@@ -53,27 +59,27 @@
                         </thead>
 
                         <tbody>
-                            <tr>
-                                <td><a href = "paciente.html">00048803</a></td>
-                                <td><a href = "paciente.html">0038803</a></td>
-                                <td><a href = "paciente.html">Agatha Vitoria Rn Jessica Nogueira da Silva</a></td>
-                                <td><a href = "paciente.html">11/05/2019 11:48</a></td>
-                                <td><a href = "paciente.html">Secretaria de Estado</a></td>
-                                <td><a href = "paciente.html">UTI NEO - 31</a></td>
-                                <td><a href = "paciente.html">11/05/2019</a></td>
-                                <td><a href = "paciente.html">0 anos 0 meses 9 dias</a></td>
-                            </tr>
+                        <?php
+                             $consulta_sql = "call lista_paciente_internados()";
+                             $execucao_sql = $conecta->query($consulta_sql);
+                              while ($armazenamento=$execucao_sql->fetch_array(MYSQLI_ASSOC)){
+                        ?>
 
                             <tr>
-                                <td><a href = "paciente.html">00048939</a></td>
-                                <td><a href = "paciente.html">0038967</a></td>
-                                <td><a href = "paciente.html">Alessandra Barreto Fernandes</a></td>
-                                <td><a href = "paciente.html">20/05/2019 01:07</a></td>
-                                <td><a href = "paciente.html">Golden Cross</a></td>
-                                <td><a href = "paciente.html">ENF - 211 A01</a></td>
-                                <td><a href = "paciente.html">20/05/1992</a></td>
-                                <td><a href = "paciente.html">27 anos 0 meses 0 dias</a></td>
+                                <td><a href = "paciente.php"><?php echo str_pad($armazenamento["cod_intern"], 8, "0", STR_PAD_LEFT);?></a></td>
+                                <td><a href = "paciente.php"><?php echo str_pad($armazenamento["cod_pac"], 7, "0", STR_PAD_LEFT);?></a></td>
+                                <td><a href = "paciente.php"><?php echo $armazenamento["nome_completo"];?></a></td>
+                                <td><a href = "paciente.php"><?php echo $armazenamento["data_internacao"];?></a></td>
+                                <td><a href = "paciente.php"><?php echo $armazenamento["convenio"];?></a></td>
+                                <td><a href = "paciente.php"><?php echo $armazenamento["leito"];?></a></td>
+                                <td><a href = "paciente.php"><?php echo $armazenamento["data_nascimento"];?></a></td>
+                                <td><a href = "paciente.php"><?php echo $armazenamento["Idade"];?></a></td>
                             </tr>
+
+                        <?php
+                              }
+
+                        ?>
                         </tbody>
                     </table>
                 </div>

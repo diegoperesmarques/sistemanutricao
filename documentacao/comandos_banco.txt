@@ -1,4 +1,4 @@
-create database NUTRICAO
+﻿create database NUTRICAO
 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci
 
 
@@ -64,3 +64,38 @@ alter table avaliacao_clinica add column usuario_cadastro varchar(100) comment '
 alter table avaliacao_clinica add column data_cadastro datetime default current_timestamp comment 'Data e horário do cadastro do registro';
 
 alter table avaliacao_clinica add column id_paciente int comment 'Id do paciente cadastrado na tabela paciente';
+
+
+
+
+
+
+
+
+
+
+
+
+---------- Criação da Procedure lista_paciente_internados ------
+
+delimiter $$
+create procedure lista_paciente_internados()
+begin
+select
+paciente.cod_intern,
+paciente.cod_pac,
+paciente.nome_completo,
+paciente.data_internacao,
+paciente.convenio,
+paciente.leito,
+paciente.data_nascimento,
+concat(concat(concat(date_format(current_timestamp(), "%Y")-date_format(paciente.data_nascimento, "%Y"), " anos "),
+concat(date_format(current_timestamp(), "%m")-date_format(paciente.data_nascimento, "%m"), " meses ")),
+concat(date_format(current_timestamp(), "%d")-date_format(paciente.data_nascimento, "%d"), " dias")) as Idade
+from paciente
+order by 
+paciente.nome_completo;
+end
+$$
+
+
