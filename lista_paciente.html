@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>PACIENTE</Title>
+        <meta charset = "UTF-8" />
+        <link rel = "stylesheet" href = "assets/css/bootstrap.min.css" />
+        <meta name = "viewport" content = "width=device-width, initial-scale=1" />
+    </head>
+
+    <body onload = "data_atual()">
+        <div class = "container-fluid">
+            <!-- Início do título da página -->
+            <div class = "row" style = "background-color: #eeeeee;">
+                <div class = "col-1" style = "border-bottom: 5px #dcdcdc solid;">
+                    <img src = "assets/img/LOGO.png" height = "30px" />
+                </div>
+                <div class = "col-7" style = "border-bottom: 5px #dcdcdc solid; text-align: center;">
+                    <span class = "text-primary text-uppercase">LISTA DE PACIENTES</span>
+                </div>
+                <div class = "col-4" style = "border-bottom: 5px #dcdcdc solid; text-align: right;">
+                    VERSÃO 1.0 &nbsp;&nbsp;
+                    <img src = "assets/img/configuracoes.png" height = "30px" />&nbsp;&nbsp;
+                    <img src = "assets/img/sair.png" height = "30px"  />
+                </div>
+            </div>
+            <!-- Fim do título da página -->
+
+            <!-- Início Lista de pacientes e informações do paciente -->
+            <div class = "row">
+                <div class = "col-12" style = "border-left: 1px #dcdcdc solid; background-color: #eeeeee">
+                    <span>Utilize o campo abaixo para realizar o filtro do paciente</span><br />
+                    <label for = "procura">Procura: </label>
+                    <input type = "text" id = "procura" size = "200" />
+                </div>
+            </div>
+            <!-- Fim lista de paciente e informações do paciente-->
+
+            <!-- Início Documentos e histórico -->
+            <div class = "row">
+                <div class = "col-12">
+                    <table class = "table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Cod. Intern.</th>
+                                <th>Cod. Pac</th>
+                                <th>Nome Completo</th>
+                                <th>Data de Internação</th>
+                                <th>Convênio</th>
+                                <th>Leito</th>
+                                <th>Data de Nascimento</th>
+                                <th>Idade</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><a href = "paciente.html">00048803</a></td>
+                                <td><a href = "paciente.html">0038803</a></td>
+                                <td><a href = "paciente.html">Agatha Vitoria Rn Jessica Nogueira da Silva</a></td>
+                                <td><a href = "paciente.html">11/05/2019 11:48</a></td>
+                                <td><a href = "paciente.html">Secretaria de Estado</a></td>
+                                <td><a href = "paciente.html">UTI NEO - 31</a></td>
+                                <td><a href = "paciente.html">11/05/2019</a></td>
+                                <td><a href = "paciente.html">0 anos 0 meses 9 dias</a></td>
+                            </tr>
+
+                            <tr>
+                                <td><a href = "paciente.html">00048939</a></td>
+                                <td><a href = "paciente.html">0038967</a></td>
+                                <td><a href = "paciente.html">Alessandra Barreto Fernandes</a></td>
+                                <td><a href = "paciente.html">20/05/2019 01:07</a></td>
+                                <td><a href = "paciente.html">Golden Cross</a></td>
+                                <td><a href = "paciente.html">ENF - 211 A01</a></td>
+                                <td><a href = "paciente.html">20/05/1992</a></td>
+                                <td><a href = "paciente.html">27 anos 0 meses 0 dias</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <!-- Fim documentos e histórico -->
+
+            <!-- Informações de usuário -->
+            <div class = "fixed-bottom">
+                <div class = "row">
+                    <div class = "col-11" style = "background-color: white; border-top: 5px #dcdcdc solid">
+                        Informações do usuário
+                    </div>
+
+                    <div class = "col-1" style = "background-color: white; border-top: 5px #dcdcdc solid; border-left: 2px #dcdcdc solid;">
+                        Data e horário
+                    </div>
+                </div>
+            </div>
+            <!-- Fim informações de usuário -->
+        </div>
+        <footer>
+            <script type = "text/javascript" src = "assets/js/bootstrap.min.js"></script>
+            <script type = "text/javascript" src = "assets/js/jquery.min.js"></script>
+        </footer>
+    </body>
+</html>

@@ -78,7 +78,7 @@
                     <img src = "assets/img/LOGO.png" height = "30px" />
                 </div>
                 <div class = "col-7" style = "border-bottom: 5px #dcdcdc solid; text-align: center;">
-                    <span class = "text-primary text-uppercase">ADMISSÃO DO PACIENTE</span>
+                    <span class = "text-primary text-uppercase">EVOLUÇÃO PACIENTE</span>
                 </div>
                 <div class = "col-4" style = "border-bottom: 5px #dcdcdc solid; text-align: right;">
                     VERSÃO 1.0 &nbsp;&nbsp;
@@ -141,173 +141,35 @@
 
                             <!-- Início do documento -->
                             <form method = "post" action = "#">
-                                <fieldset>
-                                    <legend>Avaliação Clínica</legend>
-                                    <input type = "checkbox" />HAS Crônica
-                                    <input type = "checkbox" />HAS Gestacional
-                                    <input type = "checkbox" />DB Tipo I/II
-                                    <input type = "checkbox" />DB Gestacional
-                                    <input type = "checkbox" />DLP
-                                    <label for = "outros">Outros</label>
-                                    <input type = "text" id = "outros" size = "40" />
-                                    <br />
+                               <fieldset>
+                                   <legend>Anamnese</legend>
+                               <textarea cols = "100" rows = "5" id = "anamnese" name = "anamnese"></textarea>
 
-                                    FI:
-                                    <input type = "radio" name = "fi" />Constipação
-                                    <input type = "radio" name = "fi" />Diarréia
-                                    <input type = "radio" name = "fi" />Normal
-                                    <br />
-                            </fieldset>
+                               <br />
+                               <label for = "azia">Azia: </label>
+                               <input type = "radio" name = "azia" value = "1" />Sim
+                               <input type = "radio" name = "azia" value = "0" />Não
+                               &nbsp;&nbsp;
+                               <label for = "nauseas">Náuses: </label>
+                               <input type = "radio" name = "nauseas" value = "1" />Sim
+                               <input type = "radio" name = "nauseas" value = "0" />Não
+                               &nbsp;&nbsp;
+                               <label for = "vomitos">Vômitos: </label>
+                               <input type = "radio" name = "vomitos" value = "1" />Sim
+                               <input type = "radio" name = "vomitos" value = "0" />Não
+                               </fieldset>
 
-                            <fieldset>
-                                <legend>Avaliação Antropométrica</legend>
-                                <label for = "altura">Altura</label>
-                                <input type = "text" size = "3" id = "altura" />&nbsp;&nbsp;
-                                <label for = "idade_gestacional">Idade Gestacional</label>
-                                <input type = "text" size = "4" id = "idade_gestacional" />
-                                <label for = "em">Em</label>
-                                <input type = "text" size = "10" id = "em" value = "" />
-
-                                <br />
-                            Dados Pré-Gestacional:
-                            <label>Peso PG</label>
-                            <input type = "text" id = "peso_pg" name = "peso_pg" onBlur = "calcula_pre_gestacional()"/>kg &nbsp;&nbsp;
-
-                            <label>IMC PG</label>
-                            <input type = "text" id = "imc_pg" name = "img_pg" size = "4" />
-
-                            <label>Tipo</label>
-                            <input type = "text" id = "tipo_obsidade_gestacional" name = "tipo_obesidade_gestacional" size = "10" />
-
-                            <br />
-                            Dados Atuais:
-                            <label>Peso Atual</label>
-                            <input type = "text" id = "peso_atual" name = "peso_atual" onBlur = "calcula_atual()" size = "4" />kg &nbsp;&nbsp;
-
-                            <label>IMC Atual</label>
-                            <input type = "tex" id = "imc_atual" name = "imc_atual" size = "4" />
-
-                            <label>Tipo</label>
-                            <input type = "text" id = "tipo_obesidade_atual" name = "tipo_obesidade_atual" size = "10" />
-
-                            <br />
-                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Adulto
-                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Gestante Feto Único
-                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Adolescente
-                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Idoso NSI
-                            <input type = "radio" name = "gestante" onclick = "peso_total_gestacao()" />Gestante Gemelar
-                            <br />
-                            <label for = "ganho_peso">Ganho de peso total na gestação</label>
-                            <input type = "text" id = "ganho_peso" name = "ganho_peso" />
-                        </fieldset>
-
-                        <fieldset>
-                            <label>Alergia/Intolerância</label>
-                            <input type = "radio" name = "alergia_intolerancia" />Sim
-                            <input type = "radio" name = "alergia_intolerancia" />Não
-
-                            <br />
-                            <input type = "checkbox" />Glúten
-                            <input type = "checkbox" />Lactose
-                            <input type = "checkbox" />Proteina do Leite
-                            <input type = "checkbox" />Corante
-                            <input type = "checkbox" />Ovo
-                            <input type = "checkbox" />Amendoim
-                            <input type = "checkbox" />Frutos do Mar
-                            <input type = "checkbox" />Conservantes
-                            <label for = "outros_alergia">Outros</label>
-                            <input type = "text" id = "outros_alergia" name = "outros_alergia" />
-                        </fieldset>
-
-                        <fieldset>
-                            <legend>Preferências Alimentares</legend>
-                            <input type = "checkbox" />Carne bovina
-                            <input type = "checkbox" />Frango
-                            <input type = "checkbox" />Peixe
-                            <input type = "checkbox" />Ovo
-                            <input type = "checkbox" />Vegano
-                            <input type = "checkbox" />Ovo-lacto vegetariano
-                            <br />
-
-                            <label for = "sopa">Sopa: </label>
-                            <input type = "radio" name = "sopa" />Sim
-                            <input type = "radio" name = "sopa" />Não
-                             <br />
-
-
-                             <label for = "preferencia_jantar">Preferência Jantar</label>
-                             <input type = "checkbox" />Sopa
-                             <input type = "checkbox" />Refeição
-                             <br />
-
-
-                             <input type = "checkbox" />Açúcar
-                             <input type = "checkbox" />Adoçante aspartame
-                             <input type = "checkbox" />Adoçante sucralose
-                             <br />
-
-
-                             <label for = "verdura">Verduras: </label>
-                             <input type = "text" id = "verdura" size = "80" />
-                             <br />
-
-                             <label for = "legumes">Legumes: </label>
-                             <input type = "text" id = "legumes" size = "80" />
-                             <br />
-
-                             <label for = "frutas">Frutas: </label>
-                             <input type = "text" id = "frutas" size = "80" />
-                             <br />
-
-                             <label for = "leite_derivados">Leite e Derivados: </label>
-                             <input type = "text" id = "leite_derivados" size = "80" />
-                             <br />
-
-                             <label for = "cereais">Cereias: </label>
-                             <input type = "text" id = "cereais" size = "80" />
-                             <br />
-
-                             <label for = "leguminosas">Leguminosas: </label>
-                             <input type = "text" id = "leguminosas" size = "80" />
-                             <br />
-
-                             <input type = "checkbox" />Creme de milho
-                             <input type = "checkbox" />Creme de Palmito
-                            <br />
-
-                            <input type = "checkbox" />Chá
-                            <input type = "checkbox" />Água de Côco 
-                            <input type = "checkbox" />Iogurte Comum 
-                            <input type = "checkbox" />Iogurte Desnatado
-                            <label for = "obs">Obs: </label>
-                            <input type = "text" id = "obs" size = "30" />
-
-                            <br />
-                            Molhos
-                            <input type = "checkbox" />Sugo
-                            <input type = "checkbox" />Ervas Finas
-                            <input type = "checkbox" />Branco 
-                            <input type = "checkbox" />Champignon 
-                            <input type = "checkbox" />Alcaparras 
-                            <input type = "checkbox" />Madeira 
-                            <label for = "obs1">Obs: </label>
-                            <input type = "text" id = "obs1" size = "30" /><br />
-
-                            Sucos: 
-                            <input type = "checkbox" />Acerola c/mamão 
-                            <input type = "checkbox" />Abacaxi
-                            <input type = "checkbox" />Caju
-                            <input type = "checkbox" />Manga
-                            <input type = "checkbox" />Uva
-                            <input type = "checkbox" />Maracujá
-                            <input type = "checkbox" />Morango
-                            <input type = "checkbox" />Pêssego
-                            <input type = "checkbox" />Laranja c/mamão 
-                            <input type = "checkbox" />Melancia
-                        </fieldset>
-
-                        <label for "historico_evolucao">Histórico e Evolução Nutricional</label><br />
-                        <textarea id = "historico_evolucao" cols = "100" rows = "20"></textarea>
+                               <fieldset>
+                                   <legend>Informações</legend>
+                                   <label for = "idade_gestacional">Idade Gestacional: </label>
+                                   <input type = "text" name = "idade_gestacional" id = "idade_gestacional" size = "4" />
+                                   &nbsp; &nbsp;
+                                   <label for = "gestacao">Gestação</label>
+                                   <input type = "text" name = "gestacao" id = "gestacao" size = "10" />
+                                   &nbsp; &nbsp;
+                                   <label for = "altura">Altura: </label>
+                                   <input type = "text" name = "altura"
+                               </fieldset>
                             </form>
                             <!-- Fim do documento -->
                             <p>&nbsp;</p>
