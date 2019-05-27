@@ -11,7 +11,7 @@ header("Content-Type: text/html; charset=utf-8");
         <meta name = "viewport" content = "width=device-width, initial-scale=1" />
     </head>
 
-    <body onload = "data_atual()">
+    <body>
         <div class = "container-fluid">
             <!-- Início do título da página -->
             <div class = "row" style = "background-color: #eeeeee;">
@@ -121,12 +121,15 @@ header("Content-Type: text/html; charset=utf-8");
             <!-- Informações de usuário -->
             <div class = "fixed-bottom">
                 <div class = "row">
-                    <div class = "col-11" style = "background-color: white; border-top: 5px #dcdcdc solid">
+                    <div class = "col-10" style = "background-color: white; border-top: 5px #dcdcdc solid">
                         Informações do usuário
                     </div>
 
-                    <div class = "col-1" style = "background-color: white; border-top: 5px #dcdcdc solid; border-left: 2px #dcdcdc solid;">
-                        Data e horário
+                    <div class = "col-2" style = "background-color: white; border-top: 5px #dcdcdc solid; border-left: 2px #dcdcdc solid;">
+                        <script type = "text/javascript">
+                            var data = new Date;
+                            document.write(data.getDate()+ "/" +data.getMonth()+ "/" +data.getFullYear()+ " " +data.getHours()+ ":" +data.getMinutes());
+                        </script>
                     </div>
                 </div>
             </div>

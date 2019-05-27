@@ -1,3 +1,9 @@
+<?php
+    include("conexao.php");
+    header("Content-Type: text/html; charset=utf-8");
+    $codigo_paciente = $_GET["paciente"];
+    $codigo_internacao = $_GET["internacao"];
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -92,15 +98,24 @@
             <div class = "row">
                 <div class = "col-2" style = "padding-top: 5px;">
                     <a href = "lista_paciente.html"><img src = "assets/img/lista_paciente.png" height = "40px" /></a>
-                    <span class = "text-uppercase"><a href = "lista_paciente.html">Lista de pacientes</a></span>
+                    <span class = "text-uppercase"><a href = "lista_paciente.php">Lista de pacientes</a></span>
                 </div>
+                
+                
+                <?php 
+                    $consulta_adm_paciente = "call info_administrativa_paciente({$codigo_paciente}, {$codigo_internacao})";
+                    $executa_consulta_adm_paciente = $conecta->query($consulta_adm_paciente);
+                    $bd_adm_paciente = $executa_consulta_adm_paciente->fetch_array(MYSQLI_ASSOC);
+                ?>
                 <div class = "col-10" style = "border-left: 1px #dcdcdc solid; background-color: #eeeeee">
-                    <span class = "text-uppercase font-weight-bold">NOME COMPLETO</span><br />
-                    <span>Convênio</span>,
-                    <span>Sexo</span>,
-                    <span>Idade</span>,
-                    <span>Leito</span>
+                    <span class = "text-uppercase font-weight-bold"><?php echo $bd_adm_paciente["nome_completo"]; ?></span><br />
+                    <span><?php echo $bd_adm_paciente["convenio"]; ?></span>,
+                    <span><?php echo $bd_adm_paciente["Idade"]; ?></span>,
+                    <span><?php echo $bd_adm_paciente["leito"]; ?></span>
                 </div>
+
+
+
             </div>
             <!-- Fim lista de paciente e informações do paciente-->
 
@@ -348,12 +363,15 @@
             <!-- Informações de usuário -->
             <div class = "fixed-bottom">
                 <div class = "row">
-                    <div class = "col-11" style = "background-color: white; border-top: 5px #dcdcdc solid">
+                    <div class = "col-10" style = "background-color: white; border-top: 5px #dcdcdc solid">
                         Informações do usuário
                     </div>
 
-                    <div class = "col-1" style = "background-color: white; border-top: 5px #dcdcdc solid; border-left: 2px #dcdcdc solid;">
-                        Data e horário
+                    <div class = "col-2" style = "background-color: white; border-top: 5px #dcdcdc solid; border-left: 2px #dcdcdc solid;">
+                    <script type = "text/javascript">
+                            var data = new Date;
+                            document.write(data.getDate()+ "/" +data.getMonth()+ "/" +data.getFullYear()+ " " +data.getHours()+ ":" +data.getMinutes());
+                        </script>
                     </div>
                 </div>
             </div>
