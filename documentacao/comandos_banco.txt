@@ -25,54 +25,6 @@ direito_refeicoes varchar(3) comment 'Se for paciente clínico e evolua para par
 
 
 
---Criação da tabela de avaliação clínica
-create table avaliacao_clinica (
-id_avaliacao_clinica int primary key auto_increment comment 'Chave primária da tabela de avaliação clínica',
-avaliacao_clinica_opcoes varchar(50) comment 'Marcação da avaliação clínica',
-avaliacao_clinica_outro varchar(100) comment 'Outros avaliação clínica',
-tipo_constipacao varchar(50) comment 'Tipo de constipação escolhida',
-alergia_intelerancia int(1) comment 'Informa se o paciente tem ou não alergia SIM=1 e NÃO=0',
-tipo_alergia varchar(30) comment 'Tipo de alergia do paciente',
-observacao_alergia varchar(100) comment 'Observação da alergia do paciente',
-altura int(5) comment 'Altura do paciente',
-idade_gestacional int(5) comment 'Idade gestacional do paciente',
-data_idade_gestacional date comment 'Data da idade gestacional',
-feto_unico int(1) comment 'Informa se o feto é único SIM=1 e NÃO=0',
-peso_pre_gestacional decimal(4,2) comment 'Peso pré gestacional do paciente',
-imc_pre_gestacional decimal(4,2) comment 'IMC pré gestacional do paciente',
-dn_pre_gestacional varchar(30) comment 'DN pré gestacional',
-peso_atual decimal(4,2) comment 'Peso atual do paciente',
-imc_atual decimal(4,2) comment 'Peso atual do paciente',
-dn_atual varchar(30) comment 'Dn atual do paciente',
-ganho_peso_total decimal(4,2) comment 'Ganho de peso total do paciente',
-preferencia_alimentar varchar(40) comment 'Escolha da preferência alimentar do paciente',
-verduras text comment 'Verduras da paciente do paciente',
-legumes text comment 'Legumes escolhidos pelo paciente',
-frutas text comment 'Frutas escolhidas pelo paciente',
-leite_derivado text comment 'Leite derivado escolhido pelo paciente',
-cereais text comment 'Cereais escolhidos pelo paciente',
-leguminosas text comment 'Leguminosas escolhidas pelo paciente',
-sopa int(1) comment 'Se o paciente escolheu sopa ou não SIM=1 e NÃO=0',
-preferencia_jantar varchar(40) comment 'Escolha do jantar do paciente SOPA ou REFEIÇÃO',
-tipo_cha_escolhido varchar(40) comment 'Tipo de chá escolhido pelo paciente',
-tipo_molho_escolhido varchar(40) comment 'Tipo de molho escolhido pelo paciente',
-tipo_suco_escolhido varchar(40) comment 'Tipo de suco escolhido pelo paciente')
-character set utf8 collate utf8_general_ci;
-
-alter table avaliacao_clinica add column usuario_cadastro varchar(100) comment 'Usuário que realizou o cadastro da avaliação clínica';
-
-alter table avaliacao_clinica add column data_cadastro datetime default current_timestamp comment 'Data e horário do cadastro do registro';
-
-alter table avaliacao_clinica add column id_paciente int comment 'Id do paciente cadastrado na tabela paciente';
-
-
-
-
-
-
-
-
-
 
 
 
