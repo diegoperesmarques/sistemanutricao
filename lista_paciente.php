@@ -66,14 +66,45 @@ header("Content-Type: text/html; charset=utf-8");
                         ?>
 
                             <tr>
-                                <td><a href = "paciente.php"><?php echo str_pad($armazenamento["cod_intern"], 8, "0", STR_PAD_LEFT);?></a></td>
-                                <td><a href = "paciente.php"><?php echo str_pad($armazenamento["cod_pac"], 7, "0", STR_PAD_LEFT);?></a></td>
-                                <td><a href = "paciente.php"><?php echo $armazenamento["nome_completo"];?></a></td>
-                                <td><a href = "paciente.php"><?php echo $armazenamento["data_internacao"];?></a></td>
-                                <td><a href = "paciente.php"><?php echo $armazenamento["convenio"];?></a></td>
-                                <td><a href = "paciente.php"><?php echo $armazenamento["leito"];?></a></td>
-                                <td><a href = "paciente.php"><?php echo $armazenamento["data_nascimento"];?></a></td>
-                                <td><a href = "paciente.php"><?php echo $armazenamento["Idade"];?></a></td>
+                                <td>
+                                    <?php
+                                        echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                        echo str_pad($armazenamento["cod_intern"], 8, "0", STR_PAD_LEFT);?>
+                                </a>
+                            </td>
+                                <td>
+                                <?php
+                                        echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                 echo str_pad($armazenamento["cod_pac"], 7, "0", STR_PAD_LEFT);?></a></td>
+                                <td>
+                                <?php
+                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                echo $armazenamento["nome_completo"];
+                                ?></a></td>
+                                <td>
+                                <?php
+                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                echo $armazenamento["data_internacao"];
+                                ?></a></td>
+                                <td>
+                                <?php
+                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                echo $armazenamento["convenio"];?></a></td>
+                                <td>
+                                <?php
+                              echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                echo $armazenamento["leito"];
+                                ?></a></td>
+                                <td>
+                                <?php
+                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                echo $armazenamento["data_nascimento"];
+                                ?></a></td>
+                                <td>
+                                <?php
+                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                echo $armazenamento["Idade"];
+                                ?></a></td>
                             </tr>
 
                         <?php
