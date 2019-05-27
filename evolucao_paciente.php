@@ -1,3 +1,9 @@
+<?php
+    include("conexao.php");
+    header("Content-Type: text/html; charset=utf-8");
+    $codigo_paciente = $_GET["paciente"];
+    $codigo_internacao = $_GET["internacao"];
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -94,12 +100,18 @@
                     <a href = "lista_paciente.html"><img src = "assets/img/lista_paciente.png" height = "40px" /></a>
                     <span class = "text-uppercase"><a href = "lista_paciente.html">Lista de pacientes</a></span>
                 </div>
+
+
+                <?php
+                    $consulta_adm_paciente = "call info_administrativa_paciente({$codigo_paciente}, {$codigo_internacao})";
+                    $executa_consulta_adm_paciente = $conecta->query($consulta_adm_paciente);
+                    $bd_adm_paciente = $executa_consulta_adm_paciente->fetch_array(MYSQLI_ASSOC);
+                ?>
                 <div class = "col-10" style = "border-left: 1px #dcdcdc solid; background-color: #eeeeee">
-                    <span class = "text-uppercase font-weight-bold">NOME COMPLETO</span><br />
-                    <span>Convênio</span>,
-                    <span>Sexo</span>,
-                    <span>Idade</span>,
-                    <span>Leito</span>
+                    <span class = "text-uppercase font-weight-bold"><?php echo $bd_adm_paciente["nome_completo"]; ?></span><br />
+                    <span><?php echo $bd_adm_paciente["convenio"]; ?></span>,
+                    <span><?php echo $bd_adm_paciente["Idade"]; ?></span>,
+                    <span><?php echo $bd_adm_paciente["leito"]; ?></span>
                 </div>
             </div>
             <!-- Fim lista de paciente e informações do paciente-->
@@ -111,11 +123,19 @@
                     <nav class = "navbar bg-light">
                         <ul class = "navbar-nav">
                             <li class = "nav-item">
-                                <a class = "nav-link" href = "paciente.html" style = "display: block;">ADMISSÃO DO PACIENTE</a>
+                                <a class = "nav-link"
+                                <?php
+                                  echo ("href = \"paciente.php?paciente=" .$codigo_paciente. "&internacao=" .$codigo_internacao. "\"");
+                                ?>
+                                style = "display: block;">ADMISSÃO DO PACIENTE</a>
                             </li>
 
                             <li class = "nav-item">
-                                <a class = "nav-link" href = "evolucao_paciente.html" style = "display: block;">EVOLUÇÃO DO PACIENTE</a>
+                                <a class = "nav-link"
+                                <?php
+                                    echo ("href = \"evolucao_paciente.php?paciente=" .$codigo_paciente. "&internacao=" .$codigo_internacao. "\""); 
+                                ?>
+                                style = "display: block;">EVOLUÇÃO DO PACIENTE</a>
                             </li>
                         </ul>
                     </nav>

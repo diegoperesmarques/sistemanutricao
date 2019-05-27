@@ -100,9 +100,9 @@
                     <a href = "lista_paciente.html"><img src = "assets/img/lista_paciente.png" height = "40px" /></a>
                     <span class = "text-uppercase"><a href = "lista_paciente.php">Lista de pacientes</a></span>
                 </div>
-                
-                
-                <?php 
+
+
+                <?php
                     $consulta_adm_paciente = "call info_administrativa_paciente({$codigo_paciente}, {$codigo_internacao})";
                     $executa_consulta_adm_paciente = $conecta->query($consulta_adm_paciente);
                     $bd_adm_paciente = $executa_consulta_adm_paciente->fetch_array(MYSQLI_ASSOC);
@@ -126,11 +126,19 @@
                     <nav class = "navbar bg-light">
                         <ul class = "navbar-nav">
                             <li class = "nav-item">
-                                <a class = "nav-link" href = "paciente.html" style = "display: block;">ADMISSÃO DO PACIENTE</a>
+                                <a class = "nav-link"
+                                <?php
+                                echo ("href = \"paciente.php?paciente=" .$codigo_paciente. "&internacao=" .$codigo_internacao. "\"");
+                                ?>
+                                style = "display: block;">ADMISSÃO DO PACIENTE</a>
                             </li>
 
                             <li class = "nav-item">
-                                <a class = "nav-link" href = "evolucao_paciente.html" style = "display: block;">EVOLUÇÃO DO PACIENTE</a>
+                                <a class = "nav-link"
+                                <?php
+                                echo ("href = \"evolucao_paciente.php?paciente=" .$codigo_paciente. "&internacao=" .$codigo_internacao. "\"");
+                                ?>
+                                style = "display: block;">EVOLUÇÃO DO PACIENTE</a>
                             </li>
                         </ul>
                     </nav>
