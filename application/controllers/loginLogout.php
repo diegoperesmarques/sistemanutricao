@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       //Regras para validação do formulário de login
       $this->form_validation->set_rules('usuarioDigitado','Usuario','trim|required|min_length[4]');
       $this->form_validation->set_rules('senhaDigitado','Senha','trim|required|min_length[6]');
-
+      $this->form_validation->set_error_delimiters("<p class = 'alert alert-danger'>","</p>");
       //Validação do formulário
       if($this->form_validation->run() == FALSE) {
         if(validation_errors()){
@@ -27,6 +27,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         $senhaRecebido = md5($dadosFormulario['senhaDigitado']);
         $usuarioBanco = $this->DadosUsuario_model->getDadosUsuario($usuarioRecebido, $senhaRecebido);
         if(($usuarioRecebido == $usuarioBanco['loginUsuario']) && ($senhaRecebido == $usuarioBanco['senhaUsuario'])){
+          //Variáveis de sessão
+          $this->session->set_userdata('codigoUsuarioLogado',$usuarioBanco['idUsuarioSistema']);
+          $this->session->set_userdata('loginUsuarioLogado', $usuarioBanco['loginUsuario']);
+          $this->session->set_userdata('nomeUsuarioLogado', $usuarioBanco['nomeCompleto']);
+          $this->session->set_userdata('nivelUsuarioLogado', $usuarioBanco['nivelAcesso']);
           echo "Validado com sucesso";
         } else {
           echo "Não validado";
@@ -36,6 +41,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       }
       //Fim validação formulário
       
+    }
+
+    public function deslogar(){
+      $this->session->unset_userdata('codigoUsuarioLogado');
+      $this->session->unset_userdata('loginUsuarioLogado');
+      $this->session->unset_userdata('nomeUsuarioLogado');
+      $this->session->unset_userdata('nivelUsuarioLogado');
+      redirect("/");
     }
   }
 ?>

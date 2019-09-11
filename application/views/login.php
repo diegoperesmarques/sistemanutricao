@@ -1,3 +1,6 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -16,9 +19,6 @@
 			<a href = "<?= base_url(); ?>">
 			<img src = "<?= base_url('assets/img/logoSemTexto.png'); ?>" />
 			</a>
-			<?php
-				echo validation_errors("<p class = 'alert alert-danger'>", "</p>");
-			?>
 		</div>
 		<?= form_open('loginLogout/autenticar'); ?>
 		<div class = "input-group">
@@ -29,8 +29,10 @@
 			echo form_input(array(
 				'class' => 'form-control',
 				'name' => 'usuarioDigitado',
-				'placeholder' => 'Usuário'
+				'placeholder' => 'Usuário',
+				'value' => set_value('usuarioDigitado',"")
 			));
+			echo form_error('usuarioDigitado');
 		?>
 	</div>
 		<br />
@@ -43,8 +45,10 @@
 			echo form_password(array(
 				'class' => 'form-control',
 				'name' => 'senhaDigitado',
-				'placeholder' => 'Senha'
+				'placeholder' => 'Senha',
+				'value' => set_value('senhaDigitado',"")
 			));
+			echo form_error('senhaDigitado');
 		?>
 		</div>
 		<br />
