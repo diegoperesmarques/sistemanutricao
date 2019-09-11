@@ -32,7 +32,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           $this->session->set_userdata('loginUsuarioLogado', $usuarioBanco['loginUsuario']);
           $this->session->set_userdata('nomeUsuarioLogado', $usuarioBanco['nomeCompleto']);
           $this->session->set_userdata('nivelUsuarioLogado', $usuarioBanco['nivelAcesso']);
-          echo "Validado com sucesso";
+          
+
+          //Insert na tabela de auditoria de acesso
+          $dadosAuditoria = array(
+            'idUsuarioSistema' => $usuarioBanco['idUsuarioSistema'],
+            'tipoAcesso' => 'CONEXAO'
+          ); 
+          $this->DadosUsuario_model->insertAuditoriaAcesso($dadosAuditoria);
+          redirect("listaPaciente");
         } else {
           echo "Não validado";
         }
@@ -44,6 +52,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     }
 
     public function deslogar(){
+      $dadosAuditoria = array(
+        'idUsuarioSistema' => $this->session->userdata('codigoUsuarioLogado'),
+        'tipoAcesso' => 'DESCONEXAO'        
+      );
+      $this->DadosUsuario_model->insertAuditoriaAcesso($dadosAuditoria);
       $this->session->unset_userdata('codigoUsuarioLogado');
       $this->session->unset_userdata('loginUsuarioLogado');
       $this->session->unset_userdata('nomeUsuarioLogado');

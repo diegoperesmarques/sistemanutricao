@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <head>
         <Title>PACIENTE</Title>
         <meta charset = "UTF-8" />
-        <link rel = "stylesheet" href = "assets/css/bootstrap.min.css" />
+        <link rel = "stylesheet" href = "<?= base_url('assets/css/bootstrap.min.css'); ?>" />
         <meta name = "viewport" content = "width=device-width, initial-scale=1" />
     </head>
 
@@ -15,15 +15,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- Início do título da página -->
             <div class = "row" style = "background-color: #eeeeee;">
                 <div class = "col-1" style = "border-bottom: 5px #dcdcdc solid;">
-                    <img src = "assets/img/LOGO.png" height = "30px" />
+                    <img src = "<?= base_url('assets/img/LOGO.png'); ?>" height = "30px" />
                 </div>
                 <div class = "col-7" style = "border-bottom: 5px #dcdcdc solid; text-align: center;">
                     <span class = "text-primary text-uppercase">LISTA DE PACIENTES</span>
                 </div>
                 <div class = "col-4" style = "border-bottom: 5px #dcdcdc solid; text-align: right;">
                     VERSÃO 1.0 &nbsp;&nbsp;
-                    <img src = "assets/img/configuracoes.png" height = "30px" />&nbsp;&nbsp;
-                    <img src = "assets/img/sair.png" height = "30px"  />
+                    <img src = "<?= base_url('assets/img/configuracoes.png'); ?>" height = "30px" />&nbsp;&nbsp;
+                    <a href = "<?= base_url('deslogar'); ?>">
+                        <img src = "<?= base_url('assets/img/sair.png'); ?>" height = "30px"  />
+                    </a>
                 </div>
             </div>
             <!-- Fim do título da página -->
@@ -59,55 +61,55 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <tbody>
                         <?php
-                             $consulta_sql = "call lista_paciente_internados()";
+                           /*  $consulta_sql = "call lista_paciente_internados()";
                              $execucao_sql = $conecta->query($consulta_sql);
-                              while ($armazenamento=$execucao_sql->fetch_array(MYSQLI_ASSOC)){
+                              while ($armazenamento=$execucao_sql->fetch_array(MYSQLI_ASSOC)){*/
                         ?>
 
                             <tr>
-                                <td>
+                                <td> 60540
                                     <?php
-                                        echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                        echo str_pad($armazenamento["cod_intern"], 8, "0", STR_PAD_LEFT);?>
+                                       /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                        echo str_pad($armazenamento["cod_intern"], 8, "0", STR_PAD_LEFT);*/?>
                                 </a>
                             </td>
-                                <td>
+                                <td> 0654056
                                 <?php
-                                        echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                 echo str_pad($armazenamento["cod_pac"], 7, "0", STR_PAD_LEFT);?></a></td>
-                                <td>
+                                       /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                 echo str_pad($armazenamento["cod_pac"], 7, "0", STR_PAD_LEFT);*/?></a></td>
+                                <td> Paciente teste
                                 <?php
-                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                /*echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
                                 echo $armazenamento["nome_completo"];
-                                ?></a></td>
-                                <td>
+                                */?></a></td>
+                                <td>11/09/2019
                                 <?php
-                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                /*echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
                                 echo $armazenamento["data_internacao"];
-                                ?></a></td>
-                                <td>
+                               */ ?></a></td>
+                                <td> Convênio teste
                                 <?php
-                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                echo $armazenamento["convenio"];?></a></td>
-                                <td>
+                               /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                                echo $armazenamento["convenio"];*/?></a></td>
+                                <td>12
                                 <?php
-                              echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                            /*  echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
                                 echo $armazenamento["leito"];
-                                ?></a></td>
-                                <td>
+                                */?></a></td>
+                                <td>01/01/2001
                                 <?php
-                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                               /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
                                 echo $armazenamento["data_nascimento"];
-                                ?></a></td>
-                                <td>
+                               */ ?></a></td>
+                                <td>25 anos
                                 <?php
-                                echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
+                               /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
                                 echo $armazenamento["Idade"];
-                                ?></a></td>
+                               */ ?></a></td>
                             </tr>
 
                         <?php
-                              }
+                             /* }*/
 
                         ?>
                         </tbody>
@@ -135,8 +137,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <!-- Fim informações de usuário -->
         </div>
         <footer>
-            <script type = "text/javascript" src = "assets/js/bootstrap.min.js"></script>
-            <script type = "text/javascript" src = "assets/js/jquery.min.js"></script>
+            <script type = "text/javascript" src = "<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
+            <script type = "text/javascript" src = "<?= base_url('assets/js/jquery.min.js'); ?>"></script>
         </footer>
     </body>
 </html>

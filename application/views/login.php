@@ -55,6 +55,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		<div class = "form-group">
 		<?php
+
 			echo form_button(array(
 				'class' => 'btn btn-primary btn-large btn-block',
 				'type' => 'submit',
