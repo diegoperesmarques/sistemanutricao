@@ -1,0 +1,28 @@
+.topo {
+    background-color: #297489;
+}
+
+.quadro {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    display: none;
+    background-color: #c06a77;
+    text-align: center;
+    color: white;
+    font-size: 170%;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.363);
+}
+
+.quadro a {
+    display: block;
+    text-decoration: none;
+    color: white;
+}
+
+.quadro a:hover {
+    display: block;
+    text-decoration: none;
+    color: white;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.200);
+}

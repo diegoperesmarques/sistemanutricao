@@ -1,0 +1,15 @@
+@import url("inicio.css");
+@import url("loginSenha.css");
+html {
+    margin: 0;
+    height: 100%;
+}
+body {
+    margin: 0;
+    /*
+    background-image: url("../images/fundo.jpg");
+    background-repeat: repeat-x;
+    */
+    background-image: linear-gradient(#ffe4e5, #ecb9c0);
+    height: 100%;
+}
