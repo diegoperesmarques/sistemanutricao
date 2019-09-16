@@ -38,7 +38,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           $dadosAuditoria = array(
             'idUsuarioSistema' => $usuarioBanco['idUsuarioSistema'],
             'tipoAcesso' => 'CONEXAO'
-          ); 
+          );
           $this->DadosUsuario_model->insertAuditoriaAcesso($dadosAuditoria);
           redirect("listaPaciente");
         } else {
@@ -48,13 +48,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
       }
       //Fim validação formulário
-      
+
     }
 
     public function deslogar(){
       $dadosAuditoria = array(
         'idUsuarioSistema' => $this->session->userdata('codigoUsuarioLogado'),
-        'tipoAcesso' => 'DESCONEXAO'        
+        'tipoAcesso' => 'DESCONEXAO'
       );
       $this->DadosUsuario_model->insertAuditoriaAcesso($dadosAuditoria);
       $this->session->unset_userdata('codigoUsuarioLogado');
