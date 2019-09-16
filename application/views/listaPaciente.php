@@ -61,56 +61,46 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <tbody>
                         <?php
-                           /*  $consulta_sql = "call lista_paciente_internados()";
-                             $execucao_sql = $conecta->query($consulta_sql);
-                              while ($armazenamento=$execucao_sql->fetch_array(MYSQLI_ASSOC)){*/
+                           foreach($listaPaciente as $listPac) {
                         ?>
 
                             <tr>
-                                <td> 60540
-                                    <?php
-                                       /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                        echo str_pad($armazenamento["cod_intern"], 8, "0", STR_PAD_LEFT);*/?>
-                                </a>
+                                <td> <a href = 'prontuarioPaciente/<?= $listPac->codPac; ?>/<?= $listPac->codIntern?>' style = "display: block;">
+                                <?= str_pad($listPac->codIntern, 8, "0", STR_PAD_LEFT); ?>
+                            </a>
                             </td>
-                                <td> 0654056
-                                <?php
-                                       /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                 echo str_pad($armazenamento["cod_pac"], 7, "0", STR_PAD_LEFT);*/?></a></td>
-                                <td> Paciente teste
-                                <?php
-                                /*echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                echo $armazenamento["nome_completo"];
-                                */?></a></td>
-                                <td>11/09/2019
-                                <?php
-                                /*echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                echo $armazenamento["data_internacao"];
-                               */ ?></a></td>
-                                <td> Convênio teste
-                                <?php
-                               /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                echo $armazenamento["convenio"];*/?></a></td>
-                                <td>12
-                                <?php
-                            /*  echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                echo $armazenamento["leito"];
-                                */?></a></td>
-                                <td>01/01/2001
-                                <?php
-                               /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                echo $armazenamento["data_nascimento"];
-                               */ ?></a></td>
-                                <td>25 anos
-                                <?php
-                               /* echo("<a href = \"paciente.php?paciente=" .$armazenamento["cod_pac"]. "&internacao=" .$armazenamento["cod_intern"]. "\">");
-                                echo $armazenamento["Idade"];
-                               */ ?></a></td>
+                                <td> <a href = 'prontuarioPaciente/<?= $listPac->codPac; ?>/<?= $listPac->codIntern?>'>
+                                <?= str_pad($listPac->codPac, 7, "0", STR_PAD_LEFT); ?>
+                            </a>
+                            </td>
+                                <td> <a href = 'prontuarioPaciente/<?= $listPac->codPac; ?>/<?= $listPac->codIntern?>'>
+                                <?= $listPac->nomeCompleto; ?>
+                            </a>
+                            </td>
+                                <td><a href = 'prontuarioPaciente/<?= $listPac->codPac; ?>/<?= $listPac->codIntern?>'>
+                                <?= $listPac->dataInternacao; ?>
+                            </a>
+                           </td>
+                                <td> <a href = 'prontuarioPaciente/<?= $listPac->codPac; ?>/<?= $listPac->codIntern?>'>
+                                <?= $listPac->convenio; ?>
+                            </a>
+                            </td>
+                                <td><a href = 'prontuarioPaciente/<?= $listPac->codPac; ?>/<?= $listPac->codIntern?>'>
+                                <?= $listPac->leito; ?>
+                            </a>
+                            </td>
+                                <td><a href = 'prontuarioPaciente/<?= $listPac->codPac; ?>/<?= $listPac->codIntern?>'>
+                                <?= $listPac->dataNascimento; ?>
+                            </a>
+                              </td>
+                                <td><a href = 'prontuarioPaciente/<?= $listPac->codPac; ?>/<?= $listPac->codIntern?>'>
+                                <?= $listPac->idade; ?>
+                            </a>
+                              </td>
                             </tr>
 
                         <?php
-                             /* }*/
-
+                             }
                         ?>
                         </tbody>
                     </table>
